@@ -11,6 +11,7 @@ class Login extends React.Component {
         return (
             <View style={styles.viewContainer}>
                 <Header
+                    outerContainerStyles={styles.headerStyle}
                     placement="left"
                     leftComponent={<TouchableOpacity
                         onPress={() => this.props.navigation.goBack(null)}
@@ -20,11 +21,12 @@ class Login extends React.Component {
                             color='#ffff'
                         />
                     </TouchableOpacity>}
-                    centerComponent={{text: 'Login', style: {color: '#fff'}}}
+                    centerComponent={{text: 'Login', style: {color: '#fff', fontSize:18}}}
                 />
                 <View>
                     {this.props.loginForm}
                 </View>
+                <View>
                 <Button
                     loading
                     loadingRight
@@ -37,6 +39,7 @@ class Login extends React.Component {
                     title='Login'
                     onPress={this.props.onLogin}
                 />
+                </View>
                 <Button
                     loading
                     loadingRight
@@ -72,11 +75,13 @@ class Login extends React.Component {
 }
 
 var styles = StyleSheet.create({
+    headerStyle: {
+        padding: 10
+    },
     viewContainer: {
         backgroundColor: '#FFFFFF',
     },
     signInButton: {
-        marginLeft: -9,
         margin: 7,
         borderRadius: 30,
         flexDirection: 'row',
@@ -96,9 +101,6 @@ var styles = StyleSheet.create({
                 elevation: 2,
             },
         }),
-        height: 52,
-        width: 361,
-
     },
     signInFacebook: {
         // padding: 12,

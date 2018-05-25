@@ -1,14 +1,15 @@
 import React from "react";
 import {DrawerNavigator, StackNavigator, TabBarBottom, TabNavigator} from 'react-navigation';
-import DetailsScreen from "./components/details";
+import DetailsScreen from "./components/Product/product-details";
 import {YellowBox} from 'react-native';
-import LoginScreen from './container/LoginContainer';
+import LoginContainer from './container/AccountContainer/Login';
 import HomeScreen from './container/HomeContainer';
 import Sidebar from './container/SidebarContainer';
-import RegisterScreen from './container/RegisterContainer';
+import RegisterContainer from './container/AccountContainer/Register';
 import {Icon} from "react-native-elements";
-import AccountScreen from './container/AccountContainer';
+import AccountContainer from './container/AccountContainer/Account';
 import CartScreen from './container/CartContainer';
+import ListCarContainer from './container/ProductContainer/ProductListContainer';
 
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
@@ -33,7 +34,7 @@ const HomeStack = StackNavigator({
     });
 
 const AccountStack = StackNavigator({
-        Account: {screen: AccountScreen},
+        Account: {screen: AccountContainer},
     },
     {
         headerMode: "none",
@@ -50,7 +51,7 @@ const HomeTab = TabNavigator(
     {
         Home: {screen: HomeStack},
         Cart: {screen: CartStack},
-        Account: {screen: AccountStack},
+        Account: {screen: AccountContainer},
     }
     ,
     {
@@ -84,26 +85,13 @@ const HomeTab = TabNavigator(
 );
 const AppRouter = StackNavigator({
         Home: {screen: HomeTab},
-        Login: {screen: LoginScreen},
-        Register: {screen: RegisterScreen},
-        Audi:{screen:RegisterScreen}
+        Login: {screen: LoginContainer},
+        Register: {screen: RegisterContainer},
+        ListCar:{screen:ListCarContainer}
     },
     {
         initialRouteName: "Home",
         headerMode: "none",
-        // navigationOptions: {
-        //     title: 'Home',
-        //     headerStyle: {
-        //         backgroundColor: 'transparent',
-        //         position: 'absolute',
-        //         height: 50,
-        //         top: 0,
-        //         left: 0,
-        //         right: 0,
-        //         borderBottomWidth: 0
-        //     },
-        //     headerTintColor: '#fff'
-        // }
     });
 export default AppRouter;
 

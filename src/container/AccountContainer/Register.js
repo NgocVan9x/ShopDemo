@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {fetchList} from "./actions";
-import Register from '../../components/Register';
+import Register from '../../components/Account/Register';
 
 class RegisterContainer extends React.Component {
     componentDidMount() {

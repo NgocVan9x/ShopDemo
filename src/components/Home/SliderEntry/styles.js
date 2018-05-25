@@ -39,6 +39,9 @@ export default StyleSheet.create({
         backgroundColor: colors.black
     },
     image: {
+        flex: 1,
+        width: null,
+        height: null,
         ...StyleSheet.absoluteFillObject,
         resizeMode: 'cover',
     },

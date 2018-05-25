@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../../components/Login/index";
+import Login from "../../components/Account/Login";
 import {Field, reduxForm} from "redux-form";
 import {StyleSheet, View} from "react-native";
 import {FormInput, FormLabel, FormValidationMessage} from "react-native-elements";

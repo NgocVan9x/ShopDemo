@@ -1,4 +1,4 @@
-import {StyleSheet} from "react-native";
+import {StyleSheet,Platform} from "react-native";
 
 export const colors = {
     black: '#1a1917',
@@ -17,7 +17,8 @@ export default StyleSheet.create({
         right: 0,
         zIndex: 100,
         borderBottomWidth: 0,
-        padding: 20
+        marginTop:10,
+        padding: 10
     },
     safeArea: {
         flex: 1,
@@ -74,5 +75,49 @@ export default StyleSheet.create({
         height: 8,
         borderRadius: 4,
         marginHorizontal: 8
-    }
+    },
+    subtitleView: {
+        flexDirection: 'row',
+        paddingLeft: 10,
+        paddingTop: 5
+      },
+    ratingImage: {
+        height: 19.21,
+        width: 100
+      },
+    ratingText: {
+        paddingLeft: 10,
+        color: 'grey'
+      },
+      container: {
+        flex: 1,
+      },
+      tabBar: {
+        flexDirection: 'row',
+        backgroundColor: 'white',
+        borderColor: '#e1e8ee',
+        borderWidth: 1,
+        justifyContent: 'space-around',
+        marginBottom: 0,
+        ...Platform.select({
+            ios: {
+                shadowColor: 'rgba(0,0,0, .2)',
+                shadowOffset: {
+                    height: 0,
+                    width: 0
+                },
+                shadowOpacity: 1,
+                shadowRadius: 1
+            },
+            android: {
+                elevation: 1
+            }
+        }),
+        // paddingTop: 5,
+      },
+      tabItem: {
+        flex: 1,
+        alignItems: 'center',
+        padding: 10,
+      },
 });

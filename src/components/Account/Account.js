@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Text, TouchableOpacity, View} from "react-native";
+import {Text, TouchableOpacity, View,Button} from "react-native";
 import {Header, Icon} from "react-native-elements";
 
 class Account extends React.Component {
@@ -20,6 +20,7 @@ class Account extends React.Component {
                     centerComponent={{text: 'Account', style: {color: '#fff'}}}
                 />
                 <Text>Account!</Text>
+                <Button title="Login" onPress={()=>this.props.navigation.navigate('Login')}> </Button>
             </View>
         );
     }

@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {fetchList} from "./actions";
-import Account from '../../components/Account';
+import Account from '../../components/Account/Account';
 
 class AccountContainer extends React.Component {
     componentDidMount() {
