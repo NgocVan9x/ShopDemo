@@ -1,5 +1,5 @@
 {
-  "name": "shopcar",
+  "name": "ShopCar",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start-iphonex": "react-native run-ios --simulator \"iPhone X\""
   },
   "dependencies": {
+    "ajv": "^5.5.2",
     "lodash": "^4.17.5",
     "native-base": "^2.4.2",
     "prop-types": "^15.6.1",
